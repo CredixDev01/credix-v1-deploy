@@ -66,6 +66,10 @@ export default {
       eSonicNetwork.main,
       146
     ),
+    [eSonicNetwork.testnet]: getCommonNetworkConfig(
+      eSonicNetwork.testnet,
+      57054
+    ),
     hardhat: hardhatNetworkSettings,
     localhost: {
       url: "http://127.0.0.1:8545",
@@ -212,7 +216,10 @@ export default {
     ? DETERMINISTIC_FACTORIES
     : undefined,
   etherscan: {
-    apiKey: ETHERSCAN_KEY,
+    apiKey: {
+      [eSonicNetwork.main]: ETHERSCAN_KEY,
+      [eSonicNetwork.testnet]: ETHERSCAN_KEY,
+    },
     customChains: [
       {
         network: eSonicNetwork.main,
@@ -223,11 +230,11 @@ export default {
         },
       },
       {
-        network: eBaseNetwork.base,
-        chainId: 8453,
+        network: eSonicNetwork.testnet,
+        chainId: 57054,
         urls: {
-          apiURL: "https://api.basescan.org/api",
-          browserURL: "https://basescan.org/",
+          apiURL: 'https://api-testnet.sonicscan.org/api',
+          browserURL: 'https://testnet.sonicscan.org',
         },
       },
     ],

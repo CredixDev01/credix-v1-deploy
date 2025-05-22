@@ -58,6 +58,7 @@ export const getAlchemyKey = (net: eNetwork) => {
 
 export const NETWORKS_RPC_URL: iParamsPerNetwork<string> = {
   [eSonicNetwork.main]: process.env.SONIC_RPC,
+  [eSonicNetwork.testnet]: process.env.SONIC_TESTNET_RPC,
   [eEthereumNetwork.kovan]: `https://eth-kovan.alchemyapi.io/v2/${getAlchemyKey(
     eEthereumNetwork.kovan
   )}`,

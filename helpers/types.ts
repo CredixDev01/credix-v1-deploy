@@ -23,6 +23,7 @@ export type eNetwork =
 
 export enum eSonicNetwork {
   main = "sonic",
+  testnet = "sonic-testnet"
 }
 
 type eTenderlyNetwork = "tenderly";
