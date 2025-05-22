@@ -216,10 +216,7 @@ export default {
     ? DETERMINISTIC_FACTORIES
     : undefined,
   etherscan: {
-    apiKey: {
-      [eSonicNetwork.main]: ETHERSCAN_KEY,
-      [eSonicNetwork.testnet]: ETHERSCAN_KEY,
-    },
+    apiKey: ETHERSCAN_KEY,
     customChains: [
       {
         network: eSonicNetwork.main,
